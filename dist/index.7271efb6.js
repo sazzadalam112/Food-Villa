@@ -27466,7 +27466,15 @@ const Body = ()=>{
     _s();
     const [restaurants, setRestaurants] = (0, _react.useState)((0, _contants.restaurantList));
     const [searchtext, setSearchtext] = (0, _react.useState)("");
-    console.log("re-render");
+    (0, _react.useEffect)(()=>{
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        setRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
+    console.log("render");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27482,9 +27490,10 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 22,
-                        columnNumber: 3
+                        lineNumber: 35,
+                        columnNumber: 9
                     }, undefined),
+                    "//         ",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
                         onClick: ()=>{
@@ -27494,38 +27503,35 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 32,
-                        columnNumber: 3
+                        lineNumber: 45,
+                        columnNumber: 12
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 21,
-                columnNumber: 1
+                lineNumber: 34,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
                 children: restaurants.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
-                        ...restaurant.data,
-                        key: restaurant.data.key,
-                        __source: {
-                            fileName: "src/component/Body.js",
-                            lineNumber: 43,
-                            columnNumber: 19
-                        },
-                        __self: undefined
-                    });
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        ...restaurant.data
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 56,
+                        columnNumber: 18
+                    }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 41,
-                columnNumber: 5
+                lineNumber: 54,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "C9DINAZfHGWa3FyDs4EZbhnmN1I=");
+_s(Body, "NwHvoHDNVyoAwsQv/TK8PxMTsqk=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -28323,13 +28329,6 @@ const RestrauntCard = ({ name, cuisines, cloudinaryImageId, lastMileTravelString
             }, void 0, false, {
                 fileName: "src/component/RestaurantCard.js",
                 lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: cuisines.join(" , ")
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCard.js",
-                lineNumber: 14,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
