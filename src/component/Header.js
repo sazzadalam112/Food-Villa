@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Logo from "../assets/foodvilla.png"
 
 const loggedInuser = () => {
     // Api call to check authentication
@@ -9,13 +10,15 @@ const loggedInuser = () => {
     <img
     className="logo" 
     alt="logo" 
-    src="https://lh3.googleusercontent.com/sU3hvImuHNhl26Q18p78-aerRDpVoQSy4QvCHxPPk2DqRAvAW5ZuU4T5_RLd7VO5omxedLv-xzirCPAV_qbW1rtSrRI3qWIDUP1kMa8M=w512-rw"
+    src={Logo}
     />
     </a>
 );
 
 const Header = () => {
   const [isLoggedIn , setIsloggedIn] = useState(false)
+
+  
     return(
         <div className="header">
             <Title />
