@@ -23,7 +23,7 @@ const Body = () => {
 
   const filterData = (searchText, allRestaurants) => {
       const filterData = allRestaurants?.filter((restaurant) =>
-      restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+      restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
     );
    
 
@@ -76,14 +76,14 @@ const Body = () => {
             <RestaraurantCard
               key={restaurant?.info?.id}
               {...restaurant?.info}
-            />
-          );
-        })}
-        
-      </div>
- } 
-    </>
-  );
-};
-
-export default Body;
+              />
+            );
+          })}
+          
+        </div>
+   } 
+      </>
+    );
+  };
+  
+  export default Body;

@@ -23,11 +23,10 @@
 }
 
 .card {
-  background-color: red;
   border: 2px solid #b9adad;
   border-radius: 10px;
   width: 250px;
-  margin: 5px;
+  margin-left: 23px;
   padding: 10px;
 }
 
@@ -36,7 +35,6 @@
 }
 
 .restaurant-list {
-  background-color: #000;
   flex-wrap: wrap;
   display: flex;
 }

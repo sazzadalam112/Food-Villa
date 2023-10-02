@@ -27184,8 +27184,13 @@ $parcel$ReactRefreshHelpers$3d92.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Title", ()=>Title);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const loggedInuser = ()=>{
+    // Api call to check authentication
+    return true;
+};
 const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
         href: "/",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27194,23 +27199,24 @@ const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
             src: "https://lh3.googleusercontent.com/sU3hvImuHNhl26Q18p78-aerRDpVoQSy4QvCHxPPk2DqRAvAW5ZuU4T5_RLd7VO5omxedLv-xzirCPAV_qbW1rtSrRI3qWIDUP1kMa8M=w512-rw"
         }, void 0, false, {
             fileName: "src/component/Header.js",
-            lineNumber: 5,
+            lineNumber: 9,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Header.js",
-        lineNumber: 4,
+        lineNumber: 8,
         columnNumber: 5
     }, undefined);
 _c = Title;
 const Header = ()=>{
-    // const title = "Food Villa"
+    _s();
+    const [isLoggedIn, setIsloggedIn] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 18,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27221,48 +27227,64 @@ const Header = ()=>{
                             children: "Home"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 22,
+                            lineNumber: 25,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "About"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 23,
+                            lineNumber: 26,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Contact"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 24,
+                            lineNumber: 27,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 25,
+                            lineNumber: 28,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header.js",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 20,
+                lineNumber: 23,
                 columnNumber: 14
+            }, undefined),
+            isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsloggedIn(false),
+                children: "Logout"
+            }, void 0, false, {
+                fileName: "src/component/Header.js",
+                lineNumber: 31,
+                columnNumber: 24
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsloggedIn(true),
+                children: "Login"
+            }, void 0, false, {
+                fileName: "src/component/Header.js",
+                lineNumber: 32,
+                columnNumber: 10
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Header.js",
-        lineNumber: 17,
+        lineNumber: 20,
         columnNumber: 9
     }, undefined);
 };
+_s(Header, "gFELUHuASym/G1QYtiKoJlJCaW0=");
 _c1 = Header;
 exports.default = Header;
 var _c, _c1;
@@ -27274,7 +27296,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27475,7 +27497,7 @@ const Body = ()=>{
         searchText
     ]);
     const filterData = (searchText, allRestaurants)=>{
-        const filterData = allRestaurants?.filter((restaurant)=>restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
+        const filterData = allRestaurants?.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
         setFilteredRestaurants(filterData);
         return filterData;
     };
