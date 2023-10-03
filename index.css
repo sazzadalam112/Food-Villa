@@ -40,16 +40,9 @@
 }
 
 
-.shimmer-list .box{
-    width: 250px;
+.shimmer-card {
+    width: 200px;
     height: 400px;
-    padding: 10px;
-    margin: 5px;
-    
-    background-color: rgb(163, 156, 156);
-}
-.shimmer-list{
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-between; */
+    background-color: lightgray;
+    margin: 20px;
 }

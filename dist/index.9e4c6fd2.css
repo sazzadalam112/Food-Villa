@@ -39,17 +39,11 @@
   display: flex;
 }
 
-.shimmer-list .box {
-  background-color: #a39c9c;
-  width: 250px;
+.shimmer-card {
+  background-color: #d3d3d3;
+  width: 200px;
   height: 400px;
-  margin: 5px;
-  padding: 10px;
-}
-
-.shimmer-list {
-  flex-wrap: wrap;
-  display: flex;
+  margin: 20px;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
