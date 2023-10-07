@@ -10,8 +10,11 @@ const About = () => {
            
             This is the Namaste React Live Course Chapter 07 - Findingg page path🚀 
             </p>
-            <ProfileFunctionalComponent name={"Akshay"}/>
-            <Profile />
+            <Profile name = {"Chote"} xyz ={"SDKDDF"}/>
+            <ProfileFunctionalComponent name = {"Sazzad"}/>
+           
+            
+            
     </div>
   )
 }
