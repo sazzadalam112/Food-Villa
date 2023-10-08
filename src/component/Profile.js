@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Profile = (props) => {
   const [count,setCount] = useState(0);
  
+  useEffect( () => {
+    const timer = setInterval(() => {
+      console.log("Namaste Sazzad");
+    }, 1000);
+    console.log("useEffect");
+
+    return () => {
+      clearInterval(timer)
+      console.log("useEffect return");
+    };
+  }, []);
+  console.log("render");
  
   return (
    <div>

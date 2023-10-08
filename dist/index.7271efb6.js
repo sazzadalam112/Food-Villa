@@ -35571,56 +35571,56 @@ var _profile = require("./Profile");
 var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _profileClass = require("./ProfileClass");
 var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "About Us page"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 8,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "This is the Namaste React Live Course Chapter 07 - Findingg page path\uD83D\uDE80"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 9,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                name: "Chote",
-                xyz: "SDKDDF"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
-                name: "Sazzad"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 14,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/About.js",
-        lineNumber: 7,
-        columnNumber: 5
-    }, undefined);
-};
-_c = About;
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// import { Component } from "react";
+class About extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+    // console.log("Parent-constructor")
+    }
+    componentDidMount() {
+    // console.log("parent-componentDidMount")
+    }
+    render() {
+        // console.log("parent-render")
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "About Us page"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: "This is the Namaste React Live Course Chapter 07 - Findingg page path\uD83D\uDE80"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 22,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 28,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/component/About.js",
+            lineNumber: 20,
+            columnNumber: 7
+        }, this);
+    }
+}
 exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$77f7.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./Profile":"7kLfj","./ProfileClass":"bMaBv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./Profile":"7kLfj","./ProfileClass":"bMaBv","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35635,13 +35635,24 @@ var _s = $RefreshSig$();
 const Profile = (props)=>{
     _s();
     const [count, setCount] = (0, _react.useState)(0);
+    (0, _react.useEffect)(()=>{
+        const timer = setInterval(()=>{
+            console.log("Namaste Sazzad");
+        }, 1000);
+        console.log("useEffect");
+        return ()=>{
+            clearInterval(timer);
+            console.log("useEffect return");
+        };
+    }, []);
+    console.log("render");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "This is my  ProfileFunctionalComponent"
             }, void 0, false, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 9,
+                lineNumber: 21,
                 columnNumber: 6
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35651,7 +35662,7 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 10,
+                lineNumber: 22,
                 columnNumber: 6
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35661,7 +35672,7 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 11,
+                lineNumber: 23,
                 columnNumber: 6
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35671,17 +35682,17 @@ const Profile = (props)=>{
                 children: "Click me"
             }, void 0, false, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 12,
+                lineNumber: 24,
                 columnNumber: 6
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Profile.js",
-        lineNumber: 8,
+        lineNumber: 20,
         columnNumber: 4
     }, undefined);
 };
-_s(Profile, "RpyMek13f3iNeQO0Gs9DEYmHKoY=");
+_s(Profile, "f6rNyXb4nKr8df0VUP2jADfsx6o=");
 _c = Profile;
 exports.default = Profile;
 var _c;
@@ -35709,72 +35720,71 @@ class Profile extends (0, _reactDefault.default).Component {
         super(props);
         //create state 
         this.state = {
-            count: 0,
-            count2: 10
+            UserInfo: {
+                name: "",
+                location: ""
+            }
         };
-        console.log("constructor");
+        console.log("child - constructor");
     }
-    componentDidMount() {
-        console.log("componentDidMount");
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/sazzadalam112");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            UserInfo: json
+        });
+        console.log("child - componentDidMount" + this.props.name);
+    }
+    componentDidUpdate() {
+        console.log("Component Did Update");
+    }
+    componentWillUnmount() {
+        console.log("unmounting");
     }
     render() {
         const { count } = this.state;
-        console.log("render");
+        console.log("child-render");
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: "Profile class component"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 20,
-                    columnNumber: 10
+                    lineNumber: 36,
+                    columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "Name:",
-                        this.props.name
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 21,
-                    columnNumber: 10
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "Name:",
-                        this.props.xyz
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 22,
-                    columnNumber: 10
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    children: [
-                        "Count: ",
-                        count
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 23,
-                    columnNumber: 10
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        this.setState({
-                            count: 1
-                        });
-                    },
-                    children: "Setcount"
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: this?.state?.UserInfo?.avatar_url
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 24,
-                    columnNumber: 9
+                    lineNumber: 37,
+                    columnNumber: 10
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "Name:",
+                        this?.state?.UserInfo?.name
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 38,
+                    columnNumber: 10
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "Location:",
+                        this?.state?.UserInfo?.location
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 39,
+                    columnNumber: 10
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/component/ProfileClass.js",
-            lineNumber: 19,
+            lineNumber: 35,
             columnNumber: 7
         }, this);
     }
