@@ -23,10 +23,10 @@ class About extends React.Component{
            
             This is the Namaste React Live Course Chapter 07 - Findingg page path🚀 
             </p>
-            {/* <Profile name = {""} /> */}
+            <Profile name = {""} />
             {/* <Profile name1 = {"Sazzad"}/> */}
-            <ProfileFunctionalComponent />
-          
+            {/* <ProfileFunctionalComponent />
+           */}
            
             
             

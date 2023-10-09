@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import RestaraurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
+import { filterData } from "../Utils/helper";
+import useOnline from "../Utils/useOnline";
 
 const Body = () => {
-
-
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants,setAllRestaurants]= useState([]);
@@ -15,23 +15,14 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  useEffect(() => {
-    filterData(searchText, allRestaurants);
-    // console.log(allRestaurants);
-    console.log(filteredRestaurants);
-  }, [searchText]);
+  // useEffect(() => {
+  //   filterData(searchText, allRestaurants);
+  //   // console.log(allRestaurants);
+  //   console.log(filteredRestaurants);
+  // }, [searchText]);
 
 
-  const filterData = (searchText, allRestaurants) => {
-      const filterData = allRestaurants?.filter((restaurant) =>
-      restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-    );
-   
-
-    setFilteredRestaurants(filterData);
-
-    return filterData;
-  };
+ 
 
   async function getRestaurants() {
     
@@ -47,9 +38,13 @@ const Body = () => {
     );
   }
 
-  
+  const isOnline = useOnline();
+ if(!isOnline) { 
+  return <h1>🔴 offline, please check the internet</h1>
+ }
 
-  return (
+ if (!allRestaurants) return null;
+  return  allRestaurants?.length === 0 ? ( <Shimmer/> ) :(
     <>
       <div className="search-container">
         <input
@@ -70,7 +65,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      {filteredRestaurants?.length === 0?<Shimmer/>: 
+      
       <div className="restaurant-list">
         {filteredRestaurants?.map((restaurant) => {
           return (
@@ -83,7 +78,7 @@ const Body = () => {
           })}
           
         </div>
-   } 
+    
       </>
     );
   };

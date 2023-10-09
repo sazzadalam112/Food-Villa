@@ -1,4 +1,5 @@
 .header {
+  box-sizing: border-box;
   background-color: #faebd7;
   border: 5px solid #9e1c1c;
   justify-content: space-between;

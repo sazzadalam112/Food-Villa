@@ -3,11 +3,12 @@
 export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
+export const FETCH_MENU_URL = "https://swiggyapiwrapper.dineshrout.repl.co/api/restaurants/221504"  
 // RestaurantList is JSON Data for displaying cards
 export const restaurantList = [
   {
     type: "restaurant",
-    data: {
+    data: { 
       type: "F",
       id: "74453",
       name: "Domino's Pizza",
