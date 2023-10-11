@@ -44,19 +44,21 @@ const Body = () => {
  }
 
  if (!allRestaurants) return null;
+
+ 
   return  allRestaurants?.length === 0 ? ( <Shimmer/> ) :(
     <>
-      <div className="search-container">
+      <div className="search-container p-5 bg-slate-500 my-5">
         <input
           type="text"
-          className="search-input"
+          className="p-2 bg-red-500 text-white"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="Search"
         />
         
         <button
-          className="search-btn"
+         className="p-2 m-2 bg-slate-900 text-white rounded-full"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);

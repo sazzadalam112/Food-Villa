@@ -1,15 +1,25 @@
-import React from "react";
+import React, { lazy , Suspense} from "react";
 import  ReactDOM  from "react-dom/client";
 import Header ,{ Title } from "./component/Header";
 import Body from "./component/Body";
 import Footer from "./component/Footer";
-import About from "./component/About";
+// import About from "./component/About";
 import Error from "./component/Error";
 import Contact from "./component/Contact";
 import {createBrowserRouter , RouterProvider, Outlet} from "react-router-dom"
 import RestaurantMenu from "./component/RestaurantMenu";
 import Profile from "./component/Profile";
-import Instamart from "./component/Instamart";
+import Shimmer from "./component/Shimmer";
+// import Instamart from "./component/Instamart";
+
+// Chunking 
+// Code spliting
+// Dynamic Bundling
+// on Demand Loading
+// Dynamic Import
+const About = lazy (() => import("./component/About"))
+const Instamart = lazy(() => import("./component/Instamart"))
+//Upon On Demand Loading -> upon render -> Suspend loading ->
 
 const AppLayout = () => {
     return(
@@ -29,7 +39,7 @@ const appRouter = createBrowserRouter ([
         children: [ 
             {
                 path: "/about",
-                element: <About/>,
+                element: <Suspense fallback ={<h1>...Loading</h1>}><About/></Suspense>,
                 children: [
                     {
                         path: "profile",
@@ -52,7 +62,7 @@ const appRouter = createBrowserRouter ([
               },
               {
                 path: "/instamart",
-                element: <Instamart />,
+                element: <Suspense fallback={<Shimmer />}><Instamart /></Suspense>,
               },
         ],
     },
