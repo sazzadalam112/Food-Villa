@@ -604,40 +604,108 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const Section = ({ title, description })=>{
+    _s();
+    const [isVisible, setIsVisible] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "border border-black p-2 m-2",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "font-bold text-2xl  text-center",
+                children: title
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsVisible(false),
+                className: "cursor-pointer underline text-slate-800",
+                children: "Hide"
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 10,
+                columnNumber: 14
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsVisible(true),
+                className: "cursor-pointer underline text-slate-800",
+                children: "Show"
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 16,
+                columnNumber: 17
+            }, undefined),
+            isVisible && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: description
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 21,
+                columnNumber: 27
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Instamart.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Section, "jzu4prlL4El8roaNKUZaUbTmN+4=");
+_c = Section;
 const Instamart = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "font-bold text-4xl m-2 p-2",
                 children: "Instamart"
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 4,
+                lineNumber: 31,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "There are lots of components inside it"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Namaste Sazzad",
+                description: "This is the about section of description"
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 5,
+                lineNumber: 32,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Hello Sazzad",
+                description: "This is the about section of description and this team has 50 members"
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 36,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Carrier",
+                description: "If men were rational in their conduct, that is to say, if they acted in the way most likely to bring about the ends that they deliberately desire, intelligence would be enough to make the world almost a paradise. In the main, what is in the long run advantageous to one man is also advantageous to another. But men are actuated by passions which distort their view; feeling an impulse to injure others, they persuade themselves that it is to their interest to do so. They will not, therefore, act in the way which is in fact to their own interest unless they are actuated by generous impulses which make them indifferent to their own interest. This is why the heart is as important as the head. By the “heart” I mean, for the moment, the sum-total of kindly impulses. Where they exist, science helps them to be effective; where they are absent, science only makes men more cleverly diabolic. "
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 40,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Instamart.js",
-        lineNumber: 3,
+        lineNumber: 30,
         columnNumber: 9
     }, undefined);
 };
-_c = Instamart;
+_c1 = Instamart;
 exports.default = Instamart;
-var _c;
-$RefreshReg$(_c, "Instamart");
+var _c, _c1;
+$RefreshReg$(_c, "Section");
+$RefreshReg$(_c1, "Instamart");
 
   $parcel$ReactRefreshHelpers$36b8.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["a6vPU","1xC6H"], null, "parcelRequire77dd")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["a6vPU","1xC6H"], null, "parcelRequire77dd")
 
 //# sourceMappingURL=Instamart.add16a2c.js.map

@@ -5,14 +5,16 @@ const RestrauntCard =  ({
   cuisines,
   cloudinaryImageId,
   totalRatingsString,
+  user,
 })=> 
 {
   return(
-        <div className="card">
+        <div className="w-56 h-30 p-1 m-10 shadow-2xl bg-slate-400  ">
             <img src={ IMG_CDN_URL+cloudinaryImageId}/>
-            <h2>{name}</h2>
+            <h2 className="font-bold">{name}</h2>
             <h2>{cuisines.join(" , ")}</h2>
             <h4> Rating  {totalRatingsString}</h4>
+            <h4>{user.name}</h4>
 
         </div>
     )

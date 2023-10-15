@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import { filterData } from "../Utils/helper";
 import useOnline from "../Utils/useOnline";
 
-const Body = () => {
+const Body = ({user}) => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants,setAllRestaurants]= useState([]);
@@ -51,14 +51,14 @@ const Body = () => {
       <div className="search-container p-5 bg-slate-500 my-5">
         <input
           type="text"
-          className="p-2 bg-red-500 text-white"
+          className="focus:bg-red-200 p-2 m-2"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="Search"
         />
         
         <button
-         className="p-2 m-2 bg-slate-900 text-white rounded-full"
+         className="p-2 m-2 bg-blue-900 text-white rounded-lg hover:bg-violet-900"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
@@ -68,14 +68,14 @@ const Body = () => {
         </button>
       </div>
       
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
         {filteredRestaurants?.map((restaurant) => {
           return (
            
             <Link to="{./restaurant"><RestaraurantCard
             key={restaurant?.info?.id}
             {...restaurant?.info}
-            /></Link>
+            user={user}/></Link>
           );
           })}
           

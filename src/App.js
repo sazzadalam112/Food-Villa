@@ -1,4 +1,4 @@
-import React, { lazy , Suspense} from "react";
+import React, { lazy , Suspense, useState} from "react";
 import  ReactDOM  from "react-dom/client";
 import Header ,{ Title } from "./component/Header";
 import Body from "./component/Body";
@@ -22,6 +22,10 @@ const Instamart = lazy(() => import("./component/Instamart"))
 //Upon On Demand Loading -> upon render -> Suspend loading ->
 
 const AppLayout = () => {
+    const [user,setUser] = useState({
+        name: "Namaste React",
+        email: "Support@namastedev.com",
+    });
     return(
         <>
         <Header />
@@ -49,7 +53,10 @@ const appRouter = createBrowserRouter ([
             },
             {
                 path: "/",
-                element: <Body/>
+                element: <Body user={{
+                    name: "Namaste React",
+                    email: "Support@namastedev.com",
+                }}/>,
             },
            
             {
