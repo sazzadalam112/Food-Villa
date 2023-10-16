@@ -10,7 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants,setAllRestaurants]= useState([]);
-  const {user} = useContext(UserContext)
+  const {user,setUser} = useContext(UserContext)
   
 
   useEffect(() => {
@@ -59,7 +59,20 @@ const Body = () => {
         >
           Search
         </button>
-       <input value={user.name}></input>
+       <input value={user.name} onChange={
+        e => setUser({
+          ...user,
+          name: e.target.value,
+          
+        })
+       }></input>
+         <input value={user.email} onChange={
+        e => setUser({
+          ...user,
+          email: e.target.value,
+          
+        })
+       }></input>
         
       </div>
       
