@@ -611,6 +611,8 @@ var _profileClass = require("./ProfileClass");
 var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _usercontex = require("../Utils/Usercontex");
+var _usercontexDefault = parcelHelpers.interopDefault(_usercontex);
 // import { Component } from "react";
 class About extends (0, _reactDefault.default).Component {
     constructor(props){
@@ -628,27 +630,45 @@ class About extends (0, _reactDefault.default).Component {
                     children: "About Us page"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 21,
+                    lineNumber: 22,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _usercontexDefault.default).Consumer, {
+                    children: ({ user })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                            className: "p-4 m-4 font-bold text-2xl",
+                            children: [
+                                user.name,
+                                "-",
+                                user.email
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/component/About.js",
+                            lineNumber: 24,
+                            columnNumber: 24
+                        }, this)
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    children: "This is the Namaste React Live Course Chapter 07 - Findingg page path\uD83D\uDE80"
+                    children: " This is the Namaste React Live Course Chapter 07 - Findingg page path\uD83D\uDE80"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 22,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
                     name: ""
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 26,
+                    lineNumber: 28,
                     columnNumber: 13
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/component/About.js",
-            lineNumber: 20,
+            lineNumber: 21,
             columnNumber: 7
         }, this);
     }
@@ -660,7 +680,7 @@ exports.default = About;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./Profile":"7kLfj","./ProfileClass":"bMaBv","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMaBv":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./Profile":"7kLfj","./ProfileClass":"bMaBv","react":"21dqq","../Utils/Usercontex":"g2fyw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMaBv":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8d39 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

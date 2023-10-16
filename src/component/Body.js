@@ -75,7 +75,7 @@ const Body = ({user}) => {
             <Link to="{./restaurant"><RestaraurantCard
             key={restaurant?.info?.id}
             {...restaurant?.info}
-            user={user}/></Link>
+            /></Link>
           );
           })}
           

@@ -10,6 +10,7 @@ import {createBrowserRouter , RouterProvider, Outlet} from "react-router-dom"
 import RestaurantMenu from "./component/RestaurantMenu";
 import Profile from "./component/Profile";
 import Shimmer from "./component/Shimmer";
+import UserContext from "./Utils/Usercontex";
 // import Instamart from "./component/Instamart";
 
 // Chunking 
@@ -23,14 +24,20 @@ const Instamart = lazy(() => import("./component/Instamart"))
 
 const AppLayout = () => {
     const [user,setUser] = useState({
-        name: "Namaste React",
+        name: "Md Sazzad Alam",
         email: "Support@namastedev.com",
     });
     return(
-        <>
-        <Header />
+        <> 
+        
+        <UserContext.Provider value={{
+            user : user,
+           
+        }}>
+       <Header />
         <Outlet />
         <Footer />
+        </UserContext.Provider>
         </>
     );
 };

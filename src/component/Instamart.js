@@ -1,51 +1,51 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const Section = ({title,description}) => {
-    const[isVisible,setIsVisible] = useState(false);
+const Section = ({title,description,isvisible,setvisible}) => {
+    // const [isvisible,setvisible] = useState(false);
     return(
-        <div className="border border-black p-2 m-2">
-            <h3 className="font-bold text-2xl  text-center">{title}</h3>
-            
-            {isVisible ?(
-             <button onClick={() => setIsVisible(false)}
-            className="cursor-pointer underline text-slate-800"
-            >
-                Hide
-                </button>   
-            ) : (
-                <button onClick={() => setIsVisible(true)}
-            className="cursor-pointer underline text-slate-800"
-            >Show</button>
-            )}
-            
-            {isVisible && <p>{description}</p>}
-
+        <div className="p-4 m-2 border border-black bg-red-500 text-gray-100">
+        <h3 className="text-2xl font-bold">{title}</h3>
+        {
+         isvisible ? ( <button onClick={()=> setvisible(false)} className="cursor-pointer text-black underline">
+            Hide</button> 
+            ): (<button onClick={()=> setvisible(true)} className="cursor-pointer text-black underline">show</button>)
+        }
+        {isvisible && <p >{description}</p>}
         </div>
-        
     );
 };
-    
 const Instamart = () => {
+   const [visibleSection,setIsVisibleSection] = useState("about")
+
     return(
         <div>
-            <h1 className="font-bold text-4xl m-2 p-2">Instamart</h1>
+            <h1 className="text-4xl p-2 m-4 font-bold">Instamart</h1>
             <Section 
-            title={"Namaste Sazzad"}
-             description={"This is the about section of description"} 
+            title={"About Sazzad"}
+            description={"Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."}
+            isvisible ={visibleSection === "about"}
+            setvisible={() => setIsVisibleSection("about")}
             />
-            <Section 
-            title={"Hello Sazzad"}
-             description={"This is the about section of description and this team has 50 members"} 
+              <Section 
+            title={"Team Sazzad"}
+            description={"Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."}
+            isvisible={visibleSection === "team"}
+            setvisible={() => setIsVisibleSection("team")}
             />
-            <Section 
-            title={"Carrier"}
-             description={"If men were rational in their conduct, that is to say, if they acted in the way most likely to bring about the ends that they deliberately desire, intelligence would be enough to make the world almost a paradise. In the main, what is in the long run advantageous to one man is also advantageous to another. But men are actuated by passions which distort their view; feeling an impulse to injure others, they persuade themselves that it is to their interest to do so. They will not, therefore, act in the way which is in fact to their own interest unless they are actuated by generous impulses which make them indifferent to their own interest. This is why the heart is as important as the head. By the “heart” I mean, for the moment, the sum-total of kindly impulses. Where they exist, science helps them to be effective; where they are absent, science only makes men more cleverly diabolic. "} 
+              <Section 
+            title={"Carrers Sazzad"}
+            description={"Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."}
+            isvisible={visibleSection === "carrers"}
+            setvisible={() => setIsVisibleSection ("carrers")}
             />
-           {/* <AboutInstaMart/>
-           <DetailsofInstamart/>
-           <TeamInstamart/>
-           <Product/>
-           <Carreers/>  */}
+ 
+            
+            
+                {/* <AboutInstaMart />
+                <DetailInstaMart />
+                <TeamInstamart />
+                <Product/>
+                <Carrers/> */}
         </div>
     )
 }
