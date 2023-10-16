@@ -1,30 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext} from "react";
 import RestaraurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import { filterData } from "../Utils/helper";
 import useOnline from "../Utils/useOnline";
+import UserContext from "../Utils/Usercontex";
 
-const Body = ({user}) => {
+const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants,setAllRestaurants]= useState([]);
+  const {user} = useContext(UserContext)
   
 
   useEffect(() => {
     getRestaurants();
   }, []);
 
-  // useEffect(() => {
-  //   filterData(searchText, allRestaurants);
-  //   // console.log(allRestaurants);
-  //   console.log(filteredRestaurants);
-  // }, [searchText]);
-
-
- 
-
-  async function getRestaurants() {
+   async function getRestaurants() {
     
 
     const data =await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
@@ -66,6 +59,8 @@ const Body = ({user}) => {
         >
           Search
         </button>
+       <input value={user.name}></input>
+        
       </div>
       
       <div className="flex flex-wrap">

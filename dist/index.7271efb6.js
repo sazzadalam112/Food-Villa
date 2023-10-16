@@ -33640,20 +33640,18 @@ var _reactRouterDom = require("react-router-dom");
 var _helper = require("../Utils/helper");
 var _useOnline = require("../Utils/useOnline");
 var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _usercontex = require("../Utils/Usercontex");
+var _usercontexDefault = parcelHelpers.interopDefault(_usercontex);
 var _s = $RefreshSig$();
-const Body = ({ user })=>{
+const Body = ()=>{
     _s();
     const [searchText, setSearchText] = (0, _react.useState)("");
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    const { user } = (0, _react.useContext)((0, _usercontexDefault.default));
     (0, _react.useEffect)(()=>{
         getRestaurants();
     }, []);
-    // useEffect(() => {
-    //   filterData(searchText, allRestaurants);
-    //   // console.log(allRestaurants);
-    //   console.log(filteredRestaurants);
-    // }, [searchText]);
     async function getRestaurants() {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
@@ -33665,13 +33663,13 @@ const Body = ({ user })=>{
         children: "\uD83D\uDD34 offline, please check the internet"
     }, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 43,
+        lineNumber: 36,
         columnNumber: 10
     }, undefined);
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 49,
+        lineNumber: 42,
         columnNumber: 44
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -33686,7 +33684,7 @@ const Body = ({ user })=>{
                         placeholder: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 52,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -33698,13 +33696,20 @@ const Body = ({ user })=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 60,
+                        lineNumber: 53,
                         columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: user.name
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 62,
+                        columnNumber: 8
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 51,
+                lineNumber: 44,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33716,24 +33721,24 @@ const Body = ({ user })=>{
                             ...restaurant?.info
                         }, restaurant?.info?.id, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 75,
+                            lineNumber: 70,
                             columnNumber: 38
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 75,
+                        lineNumber: 70,
                         columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 71,
+                lineNumber: 66,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "PEqcbm/JeHu2VCXR4pONmzdhg8I=", false, function() {
+_s(Body, "rbkfyVPuXkcxSlK4KcTY9zf0lqk=", false, function() {
     return [
         (0, _useOnlineDefault.default)
     ];
@@ -33748,7 +33753,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"ekJ0u","./Shimmer":"l5rS0","react-router-dom":"9xmpe","../Utils/helper":"MyVj8","../Utils/useOnline":"6SsDS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ekJ0u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"ekJ0u","./Shimmer":"l5rS0","react-router-dom":"9xmpe","../Utils/helper":"MyVj8","../Utils/useOnline":"6SsDS","../Utils/Usercontex":"g2fyw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ekJ0u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a386 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
